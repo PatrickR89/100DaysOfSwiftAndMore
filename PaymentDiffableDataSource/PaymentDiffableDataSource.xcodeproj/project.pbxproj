@@ -14,6 +14,11 @@
 		CD89753F290BED8F002F2256 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD89753D290BED8F002F2256 /* LaunchScreen.storyboard */; };
 		CD897548290BEE37002F2256 /* PaymentDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD897547290BEE37002F2256 /* PaymentDetailsModel.swift */; };
 		CD89754B290BEE9A002F2256 /* PaymentDetailsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD89754A290BEE9A002F2256 /* PaymentDetailsViewCell.swift */; };
+		CD89754D290BF5CB002F2256 /* PaymentTypeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD89754C290BF5CB002F2256 /* PaymentTypeViewCell.swift */; };
+		CD89754F290BF679002F2256 /* PaymetTypeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD89754E290BF679002F2256 /* PaymetTypeCellModel.swift */; };
+		CD897551290BF6DB002F2256 /* CouponViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD897550290BF6DB002F2256 /* CouponViewCell.swift */; };
+		CD897553290BF713002F2256 /* CouponViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD897552290BF713002F2256 /* CouponViewCellModel.swift */; };
+		CD897555290BF73C002F2256 /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD897554290BF73C002F2256 /* OfferModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		CD897540290BED8F002F2256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD897547290BEE37002F2256 /* PaymentDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsModel.swift; sourceTree = "<group>"; };
 		CD89754A290BEE9A002F2256 /* PaymentDetailsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsViewCell.swift; sourceTree = "<group>"; };
+		CD89754C290BF5CB002F2256 /* PaymentTypeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTypeViewCell.swift; sourceTree = "<group>"; };
+		CD89754E290BF679002F2256 /* PaymetTypeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymetTypeCellModel.swift; sourceTree = "<group>"; };
+		CD897550290BF6DB002F2256 /* CouponViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponViewCell.swift; sourceTree = "<group>"; };
+		CD897552290BF713002F2256 /* CouponViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponViewCellModel.swift; sourceTree = "<group>"; };
+		CD897554290BF73C002F2256 /* OfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				CD897547290BEE37002F2256 /* PaymentDetailsModel.swift */,
+				CD89754E290BF679002F2256 /* PaymetTypeCellModel.swift */,
+				CD897552290BF713002F2256 /* CouponViewCellModel.swift */,
+				CD897554290BF73C002F2256 /* OfferModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -82,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				CD89754A290BEE9A002F2256 /* PaymentDetailsViewCell.swift */,
+				CD89754C290BF5CB002F2256 /* PaymentTypeViewCell.swift */,
+				CD897550290BF6DB002F2256 /* CouponViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,11 +171,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD89754F290BF679002F2256 /* PaymetTypeCellModel.swift in Sources */,
 				CD897537290BED8E002F2256 /* ViewController.swift in Sources */,
+				CD897555290BF73C002F2256 /* OfferModel.swift in Sources */,
+				CD89754D290BF5CB002F2256 /* PaymentTypeViewCell.swift in Sources */,
 				CD897548290BEE37002F2256 /* PaymentDetailsModel.swift in Sources */,
 				CD89754B290BEE9A002F2256 /* PaymentDetailsViewCell.swift in Sources */,
 				CD897533290BED8E002F2256 /* AppDelegate.swift in Sources */,
+				CD897551290BF6DB002F2256 /* CouponViewCell.swift in Sources */,
 				CD897535290BED8E002F2256 /* SceneDelegate.swift in Sources */,
+				CD897553290BF713002F2256 /* CouponViewCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

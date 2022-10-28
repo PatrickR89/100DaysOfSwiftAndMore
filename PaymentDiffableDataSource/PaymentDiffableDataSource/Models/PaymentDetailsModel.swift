@@ -8,7 +8,18 @@
 import Foundation
 
 struct PaymentDetailsModel: Hashable {
+    var id: UUID
     var title: String
     var price: String
     var currency: String
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
+extension PaymentDetailsModel: Equatable {
+    static func ==(lhs: PaymentDetailsModel, rhs: PaymentDetailsModel) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
