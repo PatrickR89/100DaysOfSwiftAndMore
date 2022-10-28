@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     var tableView = UITableView()
+    var button = UIButton()
     var data = [PaymentDetailsModel]()
     var newData = [Row]()
     var couponData: Row?
@@ -66,11 +67,32 @@ class ViewController: UIViewController {
 
     func setupUI() {
         view.addSubview(tableView)
-        tableView.frame = view.frame
+        view.addSubview(button)
+
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        button.setTitle("Click me!", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+
+//        tableView.frame = view.frame
         tableView.register(PaymentDetailsViewCell.self, forCellReuseIdentifier: String(describing: PaymentDetailsViewCell.self))
         tableView.register(CouponViewCell.self, forCellReuseIdentifier: String(describing: CouponViewCell.self))
         tableView.register(PaymentTypeViewCell.self, forCellReuseIdentifier: String(describing: PaymentTypeViewCell.self))
 //        tableView.dataSource = self
+
+        NSLayoutConstraint.activate([
+            button.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -10),
+            button.widthAnchor.constraint(equalTo: view.layoutMarginsGuide.widthAnchor, multiplier: 0.5),
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.heightAnchor.constraint(equalToConstant: 30),
+            tableView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            tableView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            tableView.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -5)
+        ])
     }
 
     func populateData() {
@@ -99,17 +121,35 @@ class ViewController: UIViewController {
     func configureInitialDiffableSnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Row>()
 
-        snapshot.appendSections([.payment, .coupon, .paymentType])
+        snapshot.appendSections([.payment, .paymentType])
         snapshot.appendItems(newData, toSection: .payment)
-        if let couponData = couponData {
-            snapshot.appendItems([couponData], toSection: .coupon)
-        }
 
         if let paymentTypeData = paymentTypeData {
             snapshot.appendItems([paymentTypeData], toSection: .paymentType)
         }
         
         tableViewDataSource.apply(snapshot, animatingDifferences: false)
+    }
+
+    @objc func buttonTapped() {
+        var oldSnapshot = tableViewDataSource.snapshot()
+        if !oldSnapshot.sectionIdentifiers.contains(.coupon) {
+            oldSnapshot.insertSections([.coupon], afterSection: .payment)
+            if let couponData = couponData {
+                oldSnapshot.appendItems([couponData], toSection: .coupon)
+            }
+            tableViewDataSource.defaultRowAnimation = .left
+            tableViewDataSource.apply(oldSnapshot, animatingDifferences: true)
+        } else {
+
+            let payment6 = Row.paymentDetails(PaymentDetailsModel(id: UUID(), title: "Ugh Total", price: "40.00", currency: "$"))
+            let removeItem = newData.remove(at: newData.count - 1)
+            newData.append(payment6)
+            oldSnapshot.deleteItems([removeItem])
+            oldSnapshot.appendItems([payment6], toSection: .payment)
+            tableViewDataSource.defaultRowAnimation = .top
+            tableViewDataSource.apply(oldSnapshot, animatingDifferences: true)
+        }
     }
 }
 
