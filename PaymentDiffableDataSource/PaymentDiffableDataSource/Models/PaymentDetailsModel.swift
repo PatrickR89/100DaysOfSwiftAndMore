@@ -20,6 +20,6 @@ struct PaymentDetailsModel: Hashable {
 
 extension PaymentDetailsModel: Equatable {
     static func ==(lhs: PaymentDetailsModel, rhs: PaymentDetailsModel) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.id == rhs.id && lhs.title == rhs.title && lhs.price == rhs.price && lhs.currency == rhs.currency
     }
 }

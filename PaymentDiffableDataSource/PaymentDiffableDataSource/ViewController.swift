@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     }
 
     enum Row: Hashable {
+        
         case paymentDetails(PaymentDetailsModel)
         case coupon(CouponViewCellModel)
         case paymentTypeInfo(PaymentTypeCellModel)
@@ -102,7 +103,7 @@ class ViewController: UIViewController {
         let payment4 = PaymentDetailsModel(id: UUID(), title: "Total", price: "40.00", currency: "$")
         let payment5 = PaymentDetailsModel(id: UUID(), title: "Total", price: "40.00", currency: "$")
 
-        let data = [payment1, payment2, payment3, payment4, payment5]
+        data = [payment1, payment2, payment3, payment4, payment5]
         newData = data.map {
             return Row.paymentDetails($0)
         }
@@ -141,13 +142,20 @@ class ViewController: UIViewController {
             tableViewDataSource.defaultRowAnimation = .left
             tableViewDataSource.apply(oldSnapshot, animatingDifferences: true)
         } else {
-
+//            oldSnapshot.deleteSections([.payment])
             let payment6 = Row.paymentDetails(PaymentDetailsModel(id: UUID(), title: "Ugh Total", price: "40.00", currency: "$"))
             let removeItem = newData.remove(at: newData.count - 1)
             newData.append(payment6)
             oldSnapshot.deleteItems([removeItem])
             oldSnapshot.appendItems([payment6], toSection: .payment)
-            tableViewDataSource.defaultRowAnimation = .top
+            let index = 1
+            oldSnapshot.deleteItems([newData[index]])
+
+            data[index].title = "Some distance"
+            newData[index] = .paymentDetails(data[index])
+            oldSnapshot.insertItems([newData[index]], afterItem: newData[index - 1])
+
+            tableViewDataSource.defaultRowAnimation = .fade
             tableViewDataSource.apply(oldSnapshot, animatingDifferences: true)
         }
     }
