@@ -15,6 +15,7 @@
 		CD5BCED5291508960004E690 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD5BCED3291508960004E690 /* LaunchScreen.storyboard */; };
 		CD5BCEDD291509100004E690 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5BCEDC291509100004E690 /* Coordinator.swift */; };
 		CD5BCEDF291509970004E690 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5BCEDE291509970004E690 /* Storyboarded.swift */; };
+		CD5BCEE129150B360004E690 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5BCEE029150B360004E690 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CD5BCED6291508960004E690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD5BCEDC291509100004E690 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CD5BCEDE291509970004E690 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		CD5BCEE029150B360004E690 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				CD5BCECA291508940004E690 /* SceneDelegate.swift */,
 				CD5BCECC291508940004E690 /* ViewController.swift */,
 				CD5BCECE291508940004E690 /* Main.storyboard */,
+				CD5BCEE029150B360004E690 /* MainCoordinator.swift */,
 				CD5BCED1291508960004E690 /* Assets.xcassets */,
 				CD5BCED3291508960004E690 /* LaunchScreen.storyboard */,
 				CD5BCED6291508960004E690 /* Info.plist */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD5BCEDD291509100004E690 /* Coordinator.swift in Sources */,
+				CD5BCEE129150B360004E690 /* MainCoordinator.swift in Sources */,
 				CD5BCECD291508940004E690 /* ViewController.swift in Sources */,
 				CD5BCEDF291509970004E690 /* Storyboarded.swift in Sources */,
 				CD5BCEC9291508940004E690 /* AppDelegate.swift in Sources */,
@@ -300,7 +304,6 @@
 				INFOPLIST_FILE = CoordinatorPatternDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -328,7 +331,6 @@
 				INFOPLIST_FILE = CoordinatorPatternDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
