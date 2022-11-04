@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
+class MainCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
 
@@ -17,9 +17,17 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     }
 
     func start() {
-        navigationController.delegate = self
+//        navigationController.delegate = self
         let vc = ViewController.instantiate()
-        vc.coordinator = self
+//        vc.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+//        vc.coordinator = self
+        vc.buyAction = { [weak self] value in
+            self?.buySubscription(to: value)
+        }
+
+        vc.createAccAction = { [weak self] in
+            self?.createAccount()
+        }
         navigationController.pushViewController(vc, animated: false)
     }
 
@@ -52,11 +60,11 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         }
     }
 
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+//    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
 //        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {return}
 //        if navigationController.viewControllers.contains(fromViewController) {return}
 //        if let buyViewController = fromViewController as? BuyViewController {
 //            childDidFinish(buyViewController.coordinator)
 //        }
-    }
+//    }
 }

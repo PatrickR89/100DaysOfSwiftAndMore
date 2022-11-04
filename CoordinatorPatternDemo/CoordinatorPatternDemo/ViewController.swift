@@ -9,8 +9,10 @@ import UIKit
 
 class ViewController: UIViewController, Storyboarded {
     @IBOutlet var product: UISegmentedControl!
-    
     weak var coordinator: MainCoordinator?
+    
+    var buyAction: ((Int) -> Void)?
+    var createAccAction: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,10 +20,12 @@ class ViewController: UIViewController, Storyboarded {
         view.backgroundColor = .green
     }
     @IBAction func buyTapped(_ sender: Any) {
-        coordinator?.buySubscription(to: product.selectedSegmentIndex)
+//        coordinator?.buySubscription(to: product.selectedSegmentIndex)
+        buyAction?(product.selectedSegmentIndex)
     }
     @IBAction func createAccTapped(_ sender: Any) {
-        coordinator?.createAccount()
+//        coordinator?.createAccount()
+        createAccAction?()
     }
     
 
