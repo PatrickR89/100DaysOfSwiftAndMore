@@ -14,11 +14,13 @@ class ViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .blue
+        view.backgroundColor = .green
     }
     @IBAction func buyTapped(_ sender: Any) {
+        coordinator?.buySubscription()
     }
     @IBAction func createAccTapped(_ sender: Any) {
+        coordinator?.createAccount()
     }
     
 
