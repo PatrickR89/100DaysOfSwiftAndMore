@@ -9,11 +9,14 @@ import UIKit
 
 class BuyViewController: UIViewController, Storyboarded {
 
-    weak var coordinator: BuyCoordinator?
+//    weak var coordinator: BuyCoordinator?
+    weak var coordinator: MainCoordinator?
+    var selectedProduct = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        print(selectedProduct)
         // Do any additional setup after loading the view.
     }
 

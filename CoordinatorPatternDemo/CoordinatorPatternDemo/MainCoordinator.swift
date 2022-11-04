@@ -23,11 +23,18 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         navigationController.pushViewController(vc, animated: false)
     }
 
-    func buySubscription() {
-        let child = BuyCoordinator(navigationController: navigationController)
-        child.parentCoordinator = self
-        childCoordinators.append(child)
-        child.start()
+//    func buySubscription() {
+//        let child = BuyCoordinator(navigationController: navigationController)
+//        child.parentCoordinator = self
+//        childCoordinators.append(child)
+//        child.start()
+//    }
+
+    func buySubscription(to productType: Int) {
+        let vc = BuyViewController.instantiate()
+        vc.selectedProduct = productType
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
     }
 
     func createAccount() {
@@ -46,10 +53,10 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     }
 
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {return}
-        if navigationController.viewControllers.contains(fromViewController) {return}
-        if let buyViewController = fromViewController as? BuyViewController {
-            childDidFinish(buyViewController.coordinator)
-        }
+//        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {return}
+//        if navigationController.viewControllers.contains(fromViewController) {return}
+//        if let buyViewController = fromViewController as? BuyViewController {
+//            childDidFinish(buyViewController.coordinator)
+//        }
     }
 }
