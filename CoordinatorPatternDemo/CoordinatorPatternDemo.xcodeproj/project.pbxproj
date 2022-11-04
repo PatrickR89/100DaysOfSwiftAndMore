@@ -13,6 +13,8 @@
 		CD5BCED0291508940004E690 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD5BCECE291508940004E690 /* Main.storyboard */; };
 		CD5BCED2291508960004E690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD5BCED1291508960004E690 /* Assets.xcassets */; };
 		CD5BCED5291508960004E690 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD5BCED3291508960004E690 /* LaunchScreen.storyboard */; };
+		CD5BCEDD291509100004E690 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5BCEDC291509100004E690 /* Coordinator.swift */; };
+		CD5BCEDF291509970004E690 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5BCEDE291509970004E690 /* Storyboarded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CD5BCED1291508960004E690 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD5BCED4291508960004E690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD5BCED6291508960004E690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD5BCEDC291509100004E690 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CD5BCEDE291509970004E690 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				CD5BCED1291508960004E690 /* Assets.xcassets */,
 				CD5BCED3291508960004E690 /* LaunchScreen.storyboard */,
 				CD5BCED6291508960004E690 /* Info.plist */,
+				CD5BCEDC291509100004E690 /* Coordinator.swift */,
+				CD5BCEDE291509970004E690 /* Storyboarded.swift */,
 			);
 			path = CoordinatorPatternDemo;
 			sourceTree = "<group>";
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5BCEDD291509100004E690 /* Coordinator.swift in Sources */,
 				CD5BCECD291508940004E690 /* ViewController.swift in Sources */,
+				CD5BCEDF291509970004E690 /* Storyboarded.swift in Sources */,
 				CD5BCEC9291508940004E690 /* AppDelegate.swift in Sources */,
 				CD5BCECB291508940004E690 /* SceneDelegate.swift in Sources */,
 			);
