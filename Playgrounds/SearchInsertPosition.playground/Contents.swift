@@ -1,16 +1,25 @@
 import UIKit
 
 func searchInsert(_ nums: [Int], _ target: Int) -> Int {
-    if nums.contains(target) {
-        return nums.firstIndex(of: target)!
-    } else {
-        guard let index = nums.firstIndex(where: {target < $0}) else {
-            return nums.lastIndex(where: {target > $0})! + 1
+    var start = 0
+    var end = nums.count - 1
+
+    while start <= end {
+        let index = start + (end - start)/2
+
+        if nums[index] == target {
+            return index
+        } else if nums[index] > target {
+            end = index - 1
+        } else {
+            start = index + 1
         }
-        return index
     }
+
+    return start
 }
 
+
 searchInsert([1,3,5,6], 5)
-searchInsert([1,3,5,6], 2)
-searchInsert([1,3,5,6], 7)
+searchInsert([1,3,5,6,8], 2)
+searchInsert([1,3,4,5,6], 7)
