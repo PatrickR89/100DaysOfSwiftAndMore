@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD5CF5812926519900597864 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CF5802926519900597864 /* APICaller.swift */; };
-		CD5CF583292655A100597864 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CF582292655A100597864 /* Movie.swift */; };
+		CD5CF583292655A100597864 /* MediaObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CF582292655A100597864 /* MediaObject.swift */; };
 		CD5CF5852926598800597864 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CF5842926598800597864 /* Extensions.swift */; };
 		CDBECD942922396A003243AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD932922396A003243AE /* AppDelegate.swift */; };
 		CDBECD962922396A003243AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD952922396A003243AE /* SceneDelegate.swift */; };
@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		CD5CF5802926519900597864 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
-		CD5CF582292655A100597864 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		CD5CF582292655A100597864 /* MediaObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaObject.swift; sourceTree = "<group>"; };
 		CD5CF5842926598800597864 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CDBECD902922396A003243AE /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBECD932922396A003243AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		CDBECDB229224651003243AE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CD5CF582292655A100597864 /* Movie.swift */,
+				CD5CF582292655A100597864 /* MediaObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,7 +219,7 @@
 				CD5CF5852926598800597864 /* Extensions.swift in Sources */,
 				CDBECD962922396A003243AE /* SceneDelegate.swift in Sources */,
 				CDBECDAB2922419A003243AE /* UpcomingViewController.swift in Sources */,
-				CD5CF583292655A100597864 /* Movie.swift in Sources */,
+				CD5CF583292655A100597864 /* MediaObject.swift in Sources */,
 				CDBECDA929224183003243AE /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

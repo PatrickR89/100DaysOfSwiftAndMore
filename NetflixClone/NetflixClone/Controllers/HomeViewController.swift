@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
         let headerView = HeroHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = headerView
 
-        getTrendingMovies()
+        fetchData()
     }
 
     override func viewDidLayoutSubviews() {
@@ -38,8 +38,44 @@ class HomeViewController: UIViewController {
         homeFeedTable.frame = view.bounds
     }
 
-    private func getTrendingMovies() {
-        APICaller.shared.getTrendingMoview { results in
+    private func fetchData() {
+//        APICaller.shared.getTrendingMoview { results in
+//            switch results {
+//            case .success(let movie):
+//                print(movie)
+//            case.failure(let error):
+//                print(error)
+//            }
+//        }
+//
+//        APICaller.shared.getTrendingTvs {results in
+//            switch results {
+//            case .success(let tvShow):
+//                print(tvShow)
+//            case.failure(let error):
+//                print(error)
+//            }
+//        }
+
+//        APICaller.shared.getUpcomingMovies { results in
+//            switch results {
+//            case .success(let movie):
+//                print(movie)
+//            case.failure(let error):
+//                print(error)
+//            }
+//        }
+
+//        APICaller.shared.getPopularMovies { results in
+//            switch results {
+//            case .success(let movie):
+//                print(movie)
+//            case.failure(let error):
+//                print(error)
+//            }
+//        }
+
+        APICaller.shared.getTopRatedMovies { results in
             switch results {
             case .success(let movie):
                 print(movie)
@@ -47,6 +83,7 @@ class HomeViewController: UIViewController {
                 print(error)
             }
         }
+
     }
 
     func configureNavbar() {
