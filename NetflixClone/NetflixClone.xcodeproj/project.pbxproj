@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD5CF5812926519900597864 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CF5802926519900597864 /* APICaller.swift */; };
+		CD5CF583292655A100597864 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CF582292655A100597864 /* Movie.swift */; };
 		CDBECD942922396A003243AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD932922396A003243AE /* AppDelegate.swift */; };
 		CDBECD962922396A003243AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD952922396A003243AE /* SceneDelegate.swift */; };
 		CDBECD982922396A003243AE /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD972922396A003243AE /* MainTabBarViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD5CF5802926519900597864 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		CD5CF582292655A100597864 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		CDBECD902922396A003243AE /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBECD932922396A003243AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDBECD952922396A003243AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 		CDBECDB229224651003243AE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CD5CF582292655A100597864 /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 		CDBECDB429224673003243AE /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CD5CF5802926519900597864 /* APICaller.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -203,11 +209,13 @@
 				CDBECDAD292241BA003243AE /* SearchViewController.swift in Sources */,
 				CDBECD982922396A003243AE /* MainTabBarViewController.swift in Sources */,
 				CDBECDB62922469C003243AE /* CollectionViewTableViewCell.swift in Sources */,
+				CD5CF5812926519900597864 /* APICaller.swift in Sources */,
 				CDBECDAF292241E3003243AE /* DownloadsViewController.swift in Sources */,
 				CDBECDB829224A91003243AE /* HeroHeaderView.swift in Sources */,
 				CDBECD942922396A003243AE /* AppDelegate.swift in Sources */,
 				CDBECD962922396A003243AE /* SceneDelegate.swift in Sources */,
 				CDBECDAB2922419A003243AE /* UpcomingViewController.swift in Sources */,
+				CD5CF583292655A100597864 /* Movie.swift in Sources */,
 				CDBECDA929224183003243AE /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
