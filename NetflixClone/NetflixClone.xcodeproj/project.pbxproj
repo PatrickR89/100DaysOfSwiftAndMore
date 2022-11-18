@@ -13,6 +13,8 @@
 		CD5CF589292669F400597864 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CF588292669F400597864 /* TitleCollectionViewCell.swift */; };
 		CD5CF58C29266B9D00597864 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = CD5CF58B29266B9D00597864 /* SDWebImage */; };
 		CD5CF58E29266B9D00597864 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CD5CF58D29266B9D00597864 /* SDWebImageMapKit */; };
+		CD6807322927EB8900C51379 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6807312927EB8900C51379 /* MovieTableViewCell.swift */; };
+		CD6807342928106E00C51379 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6807332928106E00C51379 /* MovieViewModel.swift */; };
 		CDBECD942922396A003243AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD932922396A003243AE /* AppDelegate.swift */; };
 		CDBECD962922396A003243AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD952922396A003243AE /* SceneDelegate.swift */; };
 		CDBECD982922396A003243AE /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD972922396A003243AE /* MainTabBarViewController.swift */; };
@@ -31,6 +33,8 @@
 		CD5CF582292655A100597864 /* MediaObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaObject.swift; sourceTree = "<group>"; };
 		CD5CF5842926598800597864 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CD5CF588292669F400597864 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD6807312927EB8900C51379 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		CD6807332928106E00C51379 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		CDBECD902922396A003243AE /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBECD932922396A003243AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDBECD952922396A003243AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				CDBECDB52922469C003243AE /* CollectionViewTableViewCell.swift */,
 				CDBECDB729224A91003243AE /* HeroHeaderView.swift */,
 				CD5CF588292669F400597864 /* TitleCollectionViewCell.swift */,
+				CD6807312927EB8900C51379 /* MovieTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 		CDBECDB129224647003243AE /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CD6807332928106E00C51379 /* MovieViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -225,6 +231,7 @@
 			files = (
 				CDBECDAD292241BA003243AE /* SearchViewController.swift in Sources */,
 				CD5CF589292669F400597864 /* TitleCollectionViewCell.swift in Sources */,
+				CD6807322927EB8900C51379 /* MovieTableViewCell.swift in Sources */,
 				CDBECD982922396A003243AE /* MainTabBarViewController.swift in Sources */,
 				CDBECDB62922469C003243AE /* CollectionViewTableViewCell.swift in Sources */,
 				CD5CF5812926519900597864 /* APICaller.swift in Sources */,
@@ -233,6 +240,7 @@
 				CDBECD942922396A003243AE /* AppDelegate.swift in Sources */,
 				CD5CF5852926598800597864 /* Extensions.swift in Sources */,
 				CDBECD962922396A003243AE /* SceneDelegate.swift in Sources */,
+				CD6807342928106E00C51379 /* MovieViewModel.swift in Sources */,
 				CDBECDAB2922419A003243AE /* UpcomingViewController.swift in Sources */,
 				CD5CF583292655A100597864 /* MediaObject.swift in Sources */,
 				CDBECDA929224183003243AE /* HomeViewController.swift in Sources */,
