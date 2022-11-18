@@ -16,6 +16,13 @@ class SearchViewController: UIViewController {
         return tableView
     }()
 
+    private let searchController: UISearchController = {
+         let searchController = UISearchController(searchResultsController: SearchResultsViewController())
+        searchController.searchBar.placeholder = "Search for movie or show"
+        searchController.searchBar.searchBarStyle = .minimal
+        return searchController
+    }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +35,9 @@ class SearchViewController: UIViewController {
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+
+        navigationItem.searchController = searchController
+        navigationController?.navigationBar.tintColor = .white
 
         fetchTopSearched()
     }
