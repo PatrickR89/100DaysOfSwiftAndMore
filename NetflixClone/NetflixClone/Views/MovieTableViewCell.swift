@@ -20,6 +20,9 @@ class MovieTableViewCell: UITableViewCell {
     private let playButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        let image = UIImage(systemName: "play.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 40))
+        button.setImage(image, for: .normal)
+        button.tintColor = .white
         return button
     }()
 
@@ -27,6 +30,7 @@ class MovieTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
 
@@ -46,18 +50,29 @@ class MovieTableViewCell: UITableViewCell {
     private func applyConstraints() {
         let posterImageViewConstraints = [
             posterImageVIew.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            posterImageVIew.topAnchor.constraint(equalTo: contentView.topAnchor),
-            posterImageVIew.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            posterImageVIew.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            posterImageVIew.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             posterImageVIew.widthAnchor.constraint(equalToConstant: 100)
         ]
 
+        let titleLabelConstraints = [
+            titleLabel.leadingAnchor.constraint(equalTo: posterImageVIew.trailingAnchor, constant: 20),
+            titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ]
+
+        let playButtonConstraints = [
+            playButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            playButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ]
+
         NSLayoutConstraint.activate(posterImageViewConstraints)
+        NSLayoutConstraint.activate(titleLabelConstraints)
+        NSLayoutConstraint.activate(playButtonConstraints)
     }
 
-    public func configure(with model: MoviewViewModel) {
-        guard let url = URL(string: model.posterURL) else {return}
+    public func configure(with model: MovieViewModel) {
+        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(model.posterURL)")
         posterImageVIew.sd_setImage(with: url)
-        titleLabel.text = model.movieName
+        titleLabel.text = model.titleName
     }
-
 }
