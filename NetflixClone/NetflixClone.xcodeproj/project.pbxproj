@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CD1C6319292B87DA003199B7 /* APICaller+Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C6318292B87DA003199B7 /* APICaller+Private.swift */; };
 		CD1C631B292B8B5C003199B7 /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C631A292B8B5C003199B7 /* YoutubeSearchResponse.swift */; };
+		CD1C631D292B956F003199B7 /* MoviePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C631C292B956F003199B7 /* MoviePreviewViewController.swift */; };
+		CD1C631F292B98B8003199B7 /* TitlePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C631E292B98B8003199B7 /* TitlePreviewViewModel.swift */; };
 		CD5CF5812926519900597864 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CF5802926519900597864 /* APICaller.swift */; };
 		CD5CF583292655A100597864 /* MediaObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CF582292655A100597864 /* MediaObject.swift */; };
 		CD5CF5852926598800597864 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CF5842926598800597864 /* Extensions.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		CD1C6318292B87DA003199B7 /* APICaller+Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APICaller+Private.swift"; sourceTree = "<group>"; };
 		CD1C631A292B8B5C003199B7 /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
+		CD1C631C292B956F003199B7 /* MoviePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePreviewViewController.swift; sourceTree = "<group>"; };
+		CD1C631E292B98B8003199B7 /* TitlePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewModel.swift; sourceTree = "<group>"; };
 		CD5CF5802926519900597864 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		CD5CF582292655A100597864 /* MediaObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaObject.swift; sourceTree = "<group>"; };
 		CD5CF5842926598800597864 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				CD680735292819E900C51379 /* SearchResultsViewController.swift */,
+				CD1C631C292B956F003199B7 /* MoviePreviewViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				CD6807332928106E00C51379 /* MovieViewModel.swift */,
+				CD1C631E292B98B8003199B7 /* TitlePreviewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -268,9 +274,11 @@
 				CD5CF5852926598800597864 /* Extensions.swift in Sources */,
 				CD1C631B292B8B5C003199B7 /* YoutubeSearchResponse.swift in Sources */,
 				CDBECD962922396A003243AE /* SceneDelegate.swift in Sources */,
+				CD1C631D292B956F003199B7 /* MoviePreviewViewController.swift in Sources */,
 				CD6807342928106E00C51379 /* MovieViewModel.swift in Sources */,
 				CDBECDAB2922419A003243AE /* UpcomingViewController.swift in Sources */,
 				CD5CF583292655A100597864 /* MediaObject.swift in Sources */,
+				CD1C631F292B98B8003199B7 /* TitlePreviewViewModel.swift in Sources */,
 				CDBECDA929224183003243AE /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

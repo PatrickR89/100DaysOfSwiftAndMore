@@ -37,6 +37,8 @@ class HomeViewController: UIViewController {
 
         let headerView = HeroHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = headerView
+
+        navigationController?.pushViewController(MoviePreviewViewController(), animated: true)
     }
 
     override func viewDidLayoutSubviews() {
