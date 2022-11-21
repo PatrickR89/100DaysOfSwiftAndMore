@@ -40,6 +40,7 @@ class SearchViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .white
 
         fetchTopSearched()
+        searchController.searchResultsUpdater = self
     }
 
     override func viewDidLayoutSubviews() {
@@ -81,5 +82,29 @@ extension SearchViewController: UITableViewDataSource {
         cell.configure(with: MovieViewModel(titleName: title, posterURL: movies[indexPath.row].poster_path ?? ""))
 
         return cell
+    }
+}
+
+extension SearchViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+
+        guard let query = searchBar.text,
+              !query.trimmingCharacters(in: .whitespaces).isEmpty,
+              query.trimmingCharacters(in: .whitespaces).count >= 3,
+              let resultsController = searchController.searchResultsController as? SearchResultsViewController else {
+            return
+        }
+
+        APICaller.shared.searchMovies(with: query) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let mediaObject):
+                    resultsController.titles = mediaObject
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     }
 }

@@ -9,7 +9,11 @@ import UIKit
 
 class SearchResultsViewController: UIViewController {
 
-    private var titles = [MediaObject]()
+    public var titles = [MediaObject]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -38,11 +42,13 @@ class SearchResultsViewController: UIViewController {
 extension SearchResultsViewController: UICollectionViewDelegate {}
 extension SearchResultsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return titles.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell else {return UICollectionViewCell()}
+
+        cell.configure(with: titles[indexPath.item].poster_path)
 
         return cell
     }

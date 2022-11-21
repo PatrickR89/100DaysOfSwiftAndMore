@@ -65,6 +65,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD1C6316292B818D003199B7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CDBECDAC292241BA003243AE /* SearchViewController.swift */,
+				CDBECDAE292241E3003243AE /* DownloadsViewController.swift */,
+				CDBECDA829224183003243AE /* HomeViewController.swift */,
+				CDBECDAA2922419A003243AE /* UpcomingViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CD1C6317292B81A1003199B7 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				CD680735292819E900C51379 /* SearchResultsViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		CDBECD872922396A003243AE = {
 			isa = PBXGroup;
 			children = (
@@ -103,11 +122,8 @@
 		CDBECDA729223B3B003243AE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CDBECDA829224183003243AE /* HomeViewController.swift */,
-				CDBECDAA2922419A003243AE /* UpcomingViewController.swift */,
-				CD680735292819E900C51379 /* SearchResultsViewController.swift */,
-				CDBECDAC292241BA003243AE /* SearchViewController.swift */,
-				CDBECDAE292241E3003243AE /* DownloadsViewController.swift */,
+				CD1C6317292B81A1003199B7 /* General */,
+				CD1C6316292B818D003199B7 /* Core */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
