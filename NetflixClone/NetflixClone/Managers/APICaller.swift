@@ -7,12 +7,6 @@
 
 import Foundation
 
-
-struct Constants {
-    static let API_KEY = "2302884f855e8145a3043aeeefbdcf78"
-    static let baseURL = "https://api.themoviedb.org/"
-}
-
 enum APIError: Error {
     case failedToGetData
 }
@@ -146,6 +140,26 @@ class APICaller {
             do {
                 let results = try JSONDecoder().decode(TmdbResponse.self, from: data)
                 completion(.success(results.results))
+            } catch {
+                completion(.failure(APIError.failedToGetData))
+            }
+        }
+
+        task.resume()
+    }
+
+    func getMoview(with query: String, completion: @escaping (Result<VideoElement, Error>) -> Void) {
+        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
+        guard let url = URL(string: "\(Constants.youtubeBaseUrl)q=\(query)&key=\(Constants.YOUTUBE_API_KEY)") else {return}
+
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data,
+            error == nil else {
+                return
+            }
+            do {
+                let results = try JSONDecoder().decode(YoutubeSearchResponse.self, from: data)
+                completion(.success(results.items[0]))
             } catch {
                 completion(.failure(APIError.failedToGetData))
             }

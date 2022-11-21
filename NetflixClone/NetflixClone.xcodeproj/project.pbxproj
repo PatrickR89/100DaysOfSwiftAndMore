@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD1C6319292B87DA003199B7 /* APICaller+Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C6318292B87DA003199B7 /* APICaller+Private.swift */; };
+		CD1C631B292B8B5C003199B7 /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1C631A292B8B5C003199B7 /* YoutubeSearchResponse.swift */; };
 		CD5CF5812926519900597864 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CF5802926519900597864 /* APICaller.swift */; };
 		CD5CF583292655A100597864 /* MediaObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CF582292655A100597864 /* MediaObject.swift */; };
 		CD5CF5852926598800597864 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CF5842926598800597864 /* Extensions.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD1C6318292B87DA003199B7 /* APICaller+Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APICaller+Private.swift"; sourceTree = "<group>"; };
+		CD1C631A292B8B5C003199B7 /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
 		CD5CF5802926519900597864 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		CD5CF582292655A100597864 /* MediaObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaObject.swift; sourceTree = "<group>"; };
 		CD5CF5842926598800597864 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				CD5CF582292655A100597864 /* MediaObject.swift */,
+				CD1C631A292B8B5C003199B7 /* YoutubeSearchResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				CD5CF5802926519900597864 /* APICaller.swift */,
+				CD1C6318292B87DA003199B7 /* APICaller+Private.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -254,11 +260,13 @@
 				CDBECD982922396A003243AE /* MainTabBarViewController.swift in Sources */,
 				CDBECDB62922469C003243AE /* CollectionViewTableViewCell.swift in Sources */,
 				CD5CF5812926519900597864 /* APICaller.swift in Sources */,
+				CD1C6319292B87DA003199B7 /* APICaller+Private.swift in Sources */,
 				CDBECDAF292241E3003243AE /* DownloadsViewController.swift in Sources */,
 				CDBECDB829224A91003243AE /* HeroHeaderView.swift in Sources */,
 				CDBECD942922396A003243AE /* AppDelegate.swift in Sources */,
 				CD680736292819E900C51379 /* SearchResultsViewController.swift in Sources */,
 				CD5CF5852926598800597864 /* Extensions.swift in Sources */,
+				CD1C631B292B8B5C003199B7 /* YoutubeSearchResponse.swift in Sources */,
 				CDBECD962922396A003243AE /* SceneDelegate.swift in Sources */,
 				CD6807342928106E00C51379 /* MovieViewModel.swift in Sources */,
 				CDBECDAB2922419A003243AE /* UpcomingViewController.swift in Sources */,

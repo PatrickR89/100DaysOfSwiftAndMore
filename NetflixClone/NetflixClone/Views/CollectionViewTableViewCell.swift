@@ -47,7 +47,24 @@ class CollectionViewTableViewCell: UITableViewCell {
     }
 }
 
-extension CollectionViewTableViewCell: UICollectionViewDelegate {}
+extension CollectionViewTableViewCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+
+        guard let titleLink = titles[indexPath.item].original_title ?? titles[indexPath.item].original_name else {
+            return
+        }
+
+        APICaller.shared.getMoview(with: titleLink + " trailer") { result in
+            switch result {
+            case .success(let videoElement):
+                print(videoElement)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+}
 extension CollectionViewTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell else {
