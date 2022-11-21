@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol CollectionViewTableViewCellDelegate: AnyObject {
+    func collectionViewTableCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: TitlePreviewViewModel)
+}
+
 class CollectionViewTableViewCell: UITableViewCell {
 
+    weak var delegate: CollectionViewTableViewCellDelegate?
     static let identifier = "CollectionViewTableViewCell"
     private var titles: [MediaObject] = [MediaObject]()
 
@@ -55,10 +60,12 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate {
             return
         }
 
-        APICaller.shared.getMoview(with: titleLink + " trailer") { result in
+        APICaller.shared.getMoview(with: titleLink + " trailer") { [weak self] result in
+            guard let self = self else {return}
             switch result {
             case .success(let videoElement):
-                print(videoElement)
+                let model = TitlePreviewViewModel(title: (self.titles[indexPath.item].original_title ?? self.titles[indexPath.item].original_name) ?? "Unknown", video: videoElement, titleOverview: self.titles[indexPath.item].overview ?? "")
+                self.delegate?.collectionViewTableCellDidTapCell(self, viewModel: model)
             case .failure(let error):
                 print(error)
             }
