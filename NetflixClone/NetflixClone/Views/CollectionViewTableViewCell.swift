@@ -52,7 +52,7 @@ class CollectionViewTableViewCell: UITableViewCell {
     }
 
     private func downloadTitleAt(indexPath: IndexPath) {
-        print("download title @ \(titles[indexPath.item].original_title)")
+        
     }
 }
 
