@@ -117,6 +117,7 @@ extension SearchViewController: UISearchResultsUpdating {
             return
         }
 
+        resultsController.delegate = self
         APICaller.shared.searchMovies(with: query) { result in
             DispatchQueue.main.async {
                 switch result {
@@ -126,6 +127,16 @@ extension SearchViewController: UISearchResultsUpdating {
                     print(error)
                 }
             }
+        }
+    }
+}
+
+extension SearchViewController: SearchResultViewControllerDelegate {
+    func searchResultsViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            let vc = MoviePreviewViewController()
+            vc.configure(with: viewModel)
+            self?.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

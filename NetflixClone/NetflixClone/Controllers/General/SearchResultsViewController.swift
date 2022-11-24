@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol SearchResultViewControllerDelegate: AnyObject {
+    func searchResultsViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel)
+}
+
 class SearchResultsViewController: UIViewController {
+
+    public weak var delegate: SearchResultViewControllerDelegate?
 
     public var titles = [MediaObject]() {
         didSet {
@@ -39,7 +45,26 @@ class SearchResultsViewController: UIViewController {
     }
 }
 
-extension SearchResultsViewController: UICollectionViewDelegate {}
+extension SearchResultsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+
+        let title = titles[indexPath.item]
+        let titleName = title.original_title ?? title.original_name ?? ""
+
+        APICaller.shared.getMoview(with: titleName) { [weak self] result in
+            switch result {
+            case .success(let videoElement):
+                DispatchQueue.main.async {
+                    self?.delegate?.searchResultsViewControllerDidTapItem(TitlePreviewViewModel(title: titleName, video: videoElement, titleOverview: title.overview ?? ""))
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+
+    }
+}
 extension SearchResultsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return titles.count
