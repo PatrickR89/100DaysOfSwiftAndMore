@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class DataPersistanceManager {
     static let shared = DataPersistanceManager()
@@ -37,5 +38,45 @@ class DataPersistanceManager {
         } catch {
             completion(.failure(error))
         }
+    }
+
+    func fetchItemsFromDataBase(completion: @escaping (Result<[TitleItem], Error>) -> Void) {
+
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+
+        let context = appDelegate.persistentContainer.viewContext
+
+        let request: NSFetchRequest<TitleItem>
+
+        request = TitleItem.fetchRequest()
+
+        do {
+
+            let titles = try context.fetch(request)
+            completion(.success(titles))
+        } catch {
+            completion(.failure(error))
+        }
+    }
+
+    func deleteTitleWith(model: TitleItem, completion: @escaping (Result<Void, Error>) -> Void) {
+
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+
+        let context = appDelegate.persistentContainer.viewContext
+
+        context.delete(model)
+
+        do {
+            try context.save()
+            completion(.success(()))
+        } catch {
+            completion(.failure(error))
+        }
+
     }
 }
