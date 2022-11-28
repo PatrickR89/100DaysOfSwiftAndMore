@@ -75,25 +75,50 @@ func invertTree(_ root: TreeNode?) -> TreeNode? {
         return nil
     }
 
-    return flipNodes(root)
-}
+    var rightStack = [TreeNode?]()
 
-func flipNodes(_ node: TreeNode?) -> TreeNode? {
-    guard node != nil else {
-        return nil
+    var node: TreeNode? = root
+    rightStack.append(node!)
+
+    while !rightStack.isEmpty {
+        let left = node?.left
+        let right = node?.right
+
+        node?.left = right
+        node?.right = left
+
+        if node?.left != nil {
+            rightStack.append(node?.right)
+            node = node?.left!
+
+        } else if node?.right != nil {
+            node = node?.right!
+        } else {
+            node = rightStack.popLast()!
+        }
     }
-
-    let left = node?.left
-    let right = node?.right
-
-    node?.right = flipNodes(left)
-    node?.left = flipNodes(right)
 
     return node
 }
 
+//func flipNodes(_ node: TreeNode?) -> TreeNode? {
+//    guard node != nil else {
+//        return nil
+//    }
+//
+//    let left = node?.left
+//    let right = node?.right
+//
+//    node?.right = flipNodes(left)
+//    node?.left = flipNodes(right)
+//
+//    return node
+//}
+
 let node1 = RootNode([4,2,7,1,3,6,9]).rootNode
 let node2 = RootNode([2,1,3]).rootNode
+let node3 = RootNode([2,3,nil,1]).rootNode
 
 invertTree(node1)
 invertTree(node2)
+invertTree(node3)
