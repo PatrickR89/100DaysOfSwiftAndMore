@@ -10,11 +10,15 @@ class MyStack {
 
     func push(_ x: Int) {
         stack.append(x)
+
+        for _ in 1..<stack.count {
+            stack.append(stack.removeFirst())
+        }
     }
 
     func pop() -> Int {
         if !stack.isEmpty {
-            return stack.popLast()!
+            return stack.removeFirst()
         }
 
         return 0
@@ -22,15 +26,14 @@ class MyStack {
 
     func top() -> Int {
         if !stack.isEmpty {
-            return stack.last!
+            return stack.first!
         }
         return 0
     }
 
     func empty() -> Bool {
         return stack.isEmpty
-    }
-}
+    }}
 
 /**
  * Your MyStack object will be instantiated and called as such:
