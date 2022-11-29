@@ -9,7 +9,11 @@ class MyQueue {
     }
 
     func push(_ x: Int) {
-        queue.append(x)
+        queue.insert(x, at: 0)
+
+        for _ in 1..<queue.count {
+            queue.insert(queue.removeLast(), at: 0)
+        }
     }
 
     func pop() -> Int {
