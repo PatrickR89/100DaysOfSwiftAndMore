@@ -2,10 +2,6 @@ import UIKit
 
 func summaryRanges(_ nums: [Int]) -> [String] {
 
-    var tempNum = 0
-    var tempArray = [Int]()
-    var result = [String]()
-
     if nums.count < 1 {
         return []
     }
@@ -14,36 +10,29 @@ func summaryRanges(_ nums: [Int]) -> [String] {
         return ["\(nums[0])"]
     }
 
-    for (index, num) in nums.enumerated() {
-        if index == 0 {
-            tempNum = num
-            tempArray.append(num)
+    var startNum = nums[0]
+    var endNum = nums[0]
+    var result = [String]()
+
+    for index in 1..<nums.count {
+        if abs(nums[index] - endNum) == 1 {
+            endNum = nums[index]
         } else {
-            if abs(num - tempNum) == 1 {
-                tempNum = num
+            if startNum == endNum {
+                result.append("\(startNum)")
+            } else {
+                result.append("\(startNum)->\(endNum)")
             }
 
-            if abs(num - tempNum) > 1 || index == nums.count - 1 {
+            endNum = nums[index]
+            startNum = nums[index]
+        }
 
-                if tempArray[0] != tempNum {
-                    tempArray.append(tempNum)
-                }
-
-                if tempArray.count > 1 {
-                    result.append("\(tempArray[0])->\(tempArray[1])")
-                } else {
-                    result.append("\(tempArray[0])")
-                }
-
-
-                tempArray = [num]
-
-                if index == nums.count - 1 && tempArray[0] != tempNum {
-                    result.append("\(tempArray[0])")
-                }
-
-                tempNum = num
-
+        if index == nums.count - 1 {
+            if startNum == endNum {
+                result.append("\(startNum)")
+            } else {
+                result.append("\(startNum)->\(endNum)")
             }
         }
     }
