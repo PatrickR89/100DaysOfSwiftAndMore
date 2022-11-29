@@ -10,29 +10,29 @@ func summaryRanges(_ nums: [Int]) -> [String] {
         return ["\(nums[0])"]
     }
 
-    var startNum = nums[0]
-    var endNum = nums[0]
+    var startPointer = 0
+    var endPointer = 0
     var result = [String]()
 
     for index in 1..<nums.count {
-        if abs(nums[index] - endNum) == 1 {
-            endNum = nums[index]
+        if abs(nums[index] - nums[endPointer]) == 1 {
+            endPointer = index
         } else {
-            if startNum == endNum {
-                result.append("\(startNum)")
+            if startPointer == endPointer {
+                result.append("\(nums[startPointer])")
             } else {
-                result.append("\(startNum)->\(endNum)")
+                result.append("\(nums[startPointer])->\(nums[endPointer])")
             }
 
-            endNum = nums[index]
-            startNum = nums[index]
+            endPointer = index
+            startPointer = index
         }
 
         if index == nums.count - 1 {
-            if startNum == endNum {
-                result.append("\(startNum)")
+            if startPointer == endPointer {
+                result.append("\(nums[startPointer])")
             } else {
-                result.append("\(startNum)->\(endNum)")
+                result.append("\(nums[startPointer])->\(nums[endPointer])")
             }
         }
     }
