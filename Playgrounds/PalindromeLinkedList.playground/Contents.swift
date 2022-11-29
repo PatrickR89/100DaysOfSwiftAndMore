@@ -26,34 +26,34 @@ let node2 = setupNodeList(list: [1,2])
 
 func isPalindrome(_ head: ListNode?) -> Bool {
 
-    if head == nil {
-        return false
+    var slowPointer: ListNode? = head
+    var fastPointer: ListNode? = head
+    var nextNode: ListNode? = ListNode()
+    var prevNode: ListNode? = ListNode()
+
+    while fastPointer != nil && fastPointer?.next != nil {
+        fastPointer = fastPointer?.next?.next
+        slowPointer = slowPointer?.next
     }
 
-    var nums = [Int]()
+    prevNode = slowPointer
+    slowPointer = slowPointer?.next
+    prevNode?.next = nil
 
-    var node: ListNode? = head
-
-    while node != nil {
-        nums.append(node!.val)
-        node = node?.next
+    while slowPointer != nil {
+        nextNode = slowPointer?.next
+        slowPointer?.next = prevNode
+        prevNode = slowPointer
+        slowPointer = nextNode
     }
 
-    if nums.count == 1 {
-        return true
-    }
+    fastPointer = head
+    slowPointer = prevNode
 
-    let half = (nums.count - 1) / 2
-    let firstHalf = Array(nums[0...half])
-    let seconHalf = Array(nums[half + 1...nums.count - 1].reversed())
-
-
-    for (index, num) in seconHalf.enumerated() {
-        if num != firstHalf[index] {
-            return false
-        }
-
-        continue
+    while slowPointer != nil {
+        if fastPointer?.val != slowPointer?.val {return false}
+        fastPointer = fastPointer?.next
+        slowPointer = slowPointer?.next
     }
 
     return true
