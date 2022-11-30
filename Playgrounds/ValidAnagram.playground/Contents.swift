@@ -6,11 +6,10 @@ func isAnagram(_ s: String, _ t: String) -> Bool {
         return false
     }
 
-    let tArray = Array(t).sorted()
-    let sArray = Array(s).sorted()
+    var tempArray = [String]()
 
-    for (index, char) in sArray.enumerated() {
-        if char != tArray[index] {return false}
+    for (index, char) in s.enumerated() {
+        
     }
 
     return true
