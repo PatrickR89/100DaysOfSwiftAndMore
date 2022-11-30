@@ -2,29 +2,18 @@ import UIKit
 
 func addDigits(_ num: Int) -> Int {
 
-    var digits = turnNumtoDigits(num)
-    var tempSum = 0
-
-    while digits.count > 1 {
-        tempSum = 0
-        digits.forEach {
-            tempSum += $0
-        }
-
-        digits = turnNumtoDigits(tempSum)
+    if num == 0 {
+        return 0
     }
 
+    var remainder = num % 9
+    print(remainder)
 
-    return digits[0]
+    if remainder == 0 {
+        return 9
+    } else {
+        return remainder
     }
-
-func turnNumtoDigits(_ num: Int) -> [Int] {
-    let tempArray = Array(String(num))
-    let newArray = tempArray.map {
-        return Int(String($0))!
-    }
-
-    return newArray
 }
 
 addDigits(38)
