@@ -2,20 +2,18 @@ import UIKit
 
 func isAnagram(_ s: String, _ t: String) -> Bool {
 
-    if s.count == 0 || t.count == 0 {
+    if s.count == 0 || t.count == 0 || t.count != s.count {
         return false
     }
 
-    var tempArray = Array(t)
+    let tArray = Array(t).sorted()
+    let sArray = Array(s).sorted()
 
-    for char in s {
-        guard let index = tempArray.firstIndex(of: char) else {
-            return false
-        }
-        tempArray.remove(at: index)
+    for (index, char) in sArray.enumerated() {
+        if char != tArray[index] {return false}
     }
 
-    return tempArray.isEmpty
+    return true
 }
 
 isAnagram("anagram", "nagaram")
