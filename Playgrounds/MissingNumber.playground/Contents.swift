@@ -2,13 +2,13 @@ import UIKit
 
 func missingNumber(_ nums: [Int]) -> Int {
 
-    for index in 0...nums.count {
-        if !nums.contains(index) {
-            return index
-        }
+    var temp = nums.count
+
+    for ind in nums.indices {
+        temp = temp ^ nums[ind] ^ ind
     }
 
-    return 0
+    return temp
 }
 
 missingNumber([3,0,1])
