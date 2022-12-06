@@ -2,9 +2,17 @@ import UIKit
 
 func reverseString(_ s: inout [Character]) {
 
+
     if s.count > 1 {
-        for i in 0...(s.count - 1) {
-            s.insert(s.removeFirst(), at: s.count - i)
+        var j = s.count - 1
+        var i = 0
+        while j >= s.count / 2 {
+                let tempChar = s[i]
+                s[i] = s[j]
+                s[j] = tempChar
+
+            i += 1
+            j -= 1
         }
     }
 }
