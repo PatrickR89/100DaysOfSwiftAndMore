@@ -2,7 +2,7 @@ import UIKit
 
 func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
 
-//    var numArr = nums2
+    let numArr: [Int] = Array(Set(nums1))
     var result = [Int]()
 
 //    for index in 0..<nums1.count {
@@ -14,7 +14,7 @@ func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
 //        }
 //    }
 
-    for num in nums1 {
+    for num in numArr {
         if nums2.contains(num) && !result.contains(num) {
             result.append(num)
         }
