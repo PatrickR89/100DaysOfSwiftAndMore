@@ -97,4 +97,4 @@ func sumOfLeftLeaves(_ root: TreeNode?) -> Int {
 let node1 = RootNode([3,9,20,nil,nil,15,7]).rootNode
 let node2 = RootNode([1]).rootNode
 let leaves = sumOfLeftLeaves(node1)
-let secLeaves = sumOfLeftLeaves(node2)
+let secLeaves = sumOfLeftLeaves(node)
