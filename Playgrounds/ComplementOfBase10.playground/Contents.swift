@@ -1,10 +1,12 @@
 import UIKit
 
-func findComplement(_ num: Int) -> Int {
-
+func bitwiseComplement(_ n: Int) -> Int {
     var binaryRep = [Int32]()
-    var num = Int32(num)
-    let cutOff = num.bitWidth - num.leadingZeroBitCount - 1
+    var num = Int32(n)
+
+    if n == 0 {
+        return 1
+    }
 
     for _ in 0...31 {
         let bit = num & 1
@@ -12,7 +14,11 @@ func findComplement(_ num: Int) -> Int {
         num = num >> 1
     }
 
-    binaryRep = Array(binaryRep[0...cutOff])
+    if let index = binaryRep.lastIndex(where: {$0 == 1}) {
+        binaryRep = Array(binaryRep[0...index])
+    }
+
+
 
 
     let newBinary = Array((binaryRep.map {
@@ -22,6 +28,6 @@ func findComplement(_ num: Int) -> Int {
     return Int(newBinary, radix: 2)!
 }
 
-findComplement(5)
-findComplement(1)
-findComplement(3543)
+bitwiseComplement(5)
+bitwiseComplement(0)
+bitwiseComplement(1000000000)
