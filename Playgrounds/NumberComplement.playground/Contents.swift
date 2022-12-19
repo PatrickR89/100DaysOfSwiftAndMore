@@ -5,14 +5,9 @@ func findComplement(_ num: Int) -> Int {
     var binaryRep = [Int32]()
     var num = Int32(num)
 
-    for _ in 1...32 {
-        let bit = num & 1
-        binaryRep.append(bit)
-        num = num >> 1
-    }
-
-    if let index = binaryRep.lastIndex(where: {$0 == 1}) {
-        binaryRep = Array(binaryRep[0...index])
+    while num > 0 {
+        binaryRep.append(num % 2)
+        num /= 2
     }
 
     let newBinary = Array((binaryRep.map {
