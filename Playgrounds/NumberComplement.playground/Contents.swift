@@ -4,11 +4,16 @@ func findComplement(_ num: Int) -> Int {
 
     var binaryRep = [Int32]()
     var num = Int32(num)
+    let cutOff = num.bitWidth - num.leadingZeroBitCount - 1
 
-    while num > 0 {
-        binaryRep.append(num % 2)
-        num /= 2
+    for _ in 1...cutOff {
+        let bit = num & 1
+        binaryRep.append(bit)
+        num = num >> 1
     }
+
+//    binaryRep = Array(binaryRep[0...cutOff])
+
 
     let newBinary = Array((binaryRep.map {
         $0 == 0 ? "1" : "0"
