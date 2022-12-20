@@ -3,13 +3,12 @@ import UIKit
 func findPoisonedDuration(_ timeSeries: [Int], _ duration: Int) -> Int {
 
     var poisonTime = 0
-    let reversedAttack = Array(timeSeries.reversed())
 
-    for (index, time) in reversedAttack.enumerated() {
-        if index == 0 {
+    for (index, time) in timeSeries.enumerated() {
+        if index == timeSeries.count - 1 {
             poisonTime += duration
         } else {
-            let freeTime = reversedAttack[index-1] - time
+            let freeTime = timeSeries[index+1] - time 
             freeTime < duration ? (poisonTime += freeTime) : (poisonTime += duration)
         }
     }
