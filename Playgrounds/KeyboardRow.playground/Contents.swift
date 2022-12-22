@@ -9,7 +9,7 @@ func findWords(_ words: [String]) -> [String] {
 
     for word in words {
         let tempWord = Set(word.lowercased())
-        if tempWord.union(firstRow) == firstRow || tempWord.union(secondRow) == secondRow || tempWord.union(thirdRow) == thirdRow {
+        if tempWord.isSubset(of: firstRow) || tempWord.isSubset(of: secondRow) || tempWord.isSubset(of: thirdRow) {
             response.append(String(word))
         }
     }
