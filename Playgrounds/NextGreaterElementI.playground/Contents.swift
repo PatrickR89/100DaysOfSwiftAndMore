@@ -1,18 +1,18 @@
 import UIKit
 
 func nextGreaterElement(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
-    var result = [Int]()
+    var dictionary = [Int: Int]()
+    var stack = [Int]()
 
-    nums1.forEach { num in
-        if let index = nums2.firstIndex(of: num) {
-            if let greater = nums2[index..<nums2.count].firstIndex(where: { $0 > num}) {
-                result.append(nums2[greater])
-            } else {
-                result.append(-1)
-            }
+    for num in nums2 {
+        while !stack.isEmpty && stack.last! < num {
+            dictionary[stack.removeLast()] = num
         }
+
+        stack.append(num)
     }
-    return result
+
+    return nums1.map { dictionary[$0] ?? -1}
 }
 
 nextGreaterElement([4,1,2], [1,3,4,2])
