@@ -69,7 +69,7 @@ public class RootNode {
     }
 }
 
-func getMinimumDifference(_ root: TreeNode?) -> Int {
+func minDiffInBST(_ root: TreeNode?) -> Int {
     guard let root = root else {
         return 0
     }
@@ -104,5 +104,5 @@ func traverseForValues(root: TreeNode, result: inout Int) -> [String: Int] {
 let node0 = RootNode([4,2,6,1,3]).rootNode
 let node1 = RootNode([1,0,48,nil,nil,12,49]).rootNode
 
-getMinimumDifference(node0)
-getMinimumDifference(node1)
+minDiffInBST(node0)
+minDiffInBST(node1)
