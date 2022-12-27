@@ -2,27 +2,23 @@ import UIKit
 
 func checkPerfectNumber(_ num: Int) -> Bool {
 
-    if num <= 0 {
+    guard num > 5 else {
         return false
     }
 
-    var tempNums = [Int]()
+    let limit = Int(floor(sqrt(Double(num))))
+    var sum = 1
 
-    for i in 1..<num {
+    for i in 2...limit {
         if num % i == 0 {
-            tempNums.append(i)
+            sum += i + num / i
         }
+
+        if sum > num {return false}
     }
 
-    var tempRes = tempNums.reduce( 0 ) {
-        return $0 + $1
-    }
 
-    print(tempNums)
-    print(tempRes)
-
-
-    return num == tempRes
+    return num == sum
 }
 
 checkPerfectNumber(28)
