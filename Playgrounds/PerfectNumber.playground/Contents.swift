@@ -6,19 +6,22 @@ func checkPerfectNumber(_ num: Int) -> Bool {
         return false
     }
 
-    let limit = Int(floor(sqrt(Double(num))))
-    var sum = 1
+    let limit = Int(sqrt(Double(num)))
+    var tempNums = [Int]()
 
     for i in 2...limit {
         if num % i == 0 {
-            sum += i + num / i
+            tempNums.append(i)
         }
-
-        if sum > num {return false}
     }
 
+    return num == tempNums.reduce(into: 1) { sum, value in
+        sum += value
 
-    return num == sum
+        if (num / value) != value {
+            sum += (num / value)
+        }
+    }
 }
 
 checkPerfectNumber(28)
