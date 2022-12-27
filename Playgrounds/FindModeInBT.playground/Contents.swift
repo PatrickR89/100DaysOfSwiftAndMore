@@ -71,36 +71,13 @@ public class RootNode {
 
 func findMode(_ root: TreeNode?) -> [Int] {
 
-    if root == nil {
+    guard let root = root else {
         return []
     }
 
-    var node = root
-    var stack = [TreeNode]()
     var result = [Int: Int]()
 
-    while node != nil {
-
-        if result[node!.val] == nil {
-            result[node!.val] = 1
-        } else {
-            result[node!.val]! += 1
-        }
-
-        if node!.left != nil {
-            stack.append(node!.left!)
-        }
-
-        if node!.right != nil {
-            node = node!.right!
-        } else {
-            if stack.count > 0 {
-                node = stack.removeLast()
-            } else {
-                node = nil
-            }
-        }
-    }
+    traverseForValue(node: root, result: &result)
 
     let topRepeat = result.reduce(0) { resultValue, dict in
         if dict.value > resultValue {
@@ -118,6 +95,19 @@ func findMode(_ root: TreeNode?) -> [Int] {
 
     return result.map {
         return $0.key
+    }
+}
+
+func traverseForValue(node: TreeNode, result: inout [Int:Int]) {
+
+    result[node.val, default: 0] += 1
+
+    if let left = node.left {
+        traverseForValue(node: left, result: &result)
+    }
+
+    if let right = node.right {
+        traverseForValue(node: right, result: &result)
     }
 }
 
