@@ -68,67 +68,33 @@ public class RootNode {
         return array
     }
 }
-
+var result = 0
 func findTilt(_ root: TreeNode?) -> Int {
-
-    guard let root = root else {
-        return 0
-    }
-
-    var result = 0
-
     calcDiff(node: root)
-
-    calcTotalTilt(node: root, value: &result)
-
     return result
 }
 
-func retrieveValues(node: TreeNode?) -> Int {
-
+func calcDiff(node: TreeNode?) -> Int {
     guard let node = node else {
         return 0
     }
 
-    var leftNodeValue = node.left != nil ? node.left!.val : 0
-    var rightNodeValue = node.right != nil ? node.right!.val : 0
 
-    if let left = node.left {
-        leftNodeValue += retrieveValues(node: left)
-    }
+    let leftSum = calcDiff(node: node.left)
+    let rightSum = calcDiff(node: node.right)
 
-    if let right = node.right {
-        rightNodeValue += retrieveValues(node: right)
-    }
+    result += abs(leftSum - rightSum)
 
-    return leftNodeValue + rightNodeValue
+    return (leftSum + rightSum + node.val)
+
 }
 
-func calcDiff(node: TreeNode?) {
 
-    guard let node = node else {
-        return
-    }
-    print("in node: \(node.val) --- > \(retrieveValues(node: node.left) + (node.left?.val ?? 0))  - \(retrieveValues(node: node.right) + (node.right?.val ?? 0)) = \(abs((retrieveValues(node: node.left) + (node.left?.val ?? 0)) - (retrieveValues(node: node.right) + (node.right?.val ?? 0))))")
-    node.val = abs((retrieveValues(node: node.left) + (node.left?.val ?? 0)) - (retrieveValues(node: node.right) + (node.right?.val ?? 0)))
-
-    calcDiff(node: node.left)
-    calcDiff(node: node.right)
-}
-
-func calcTotalTilt(node: TreeNode?, value: inout Int) {
-    guard let node = node else {
-        return
-    }
-    value += node.val
-    calcTotalTilt(node: node.left, value: &value)
-    calcTotalTilt(node: node.right, value: &value)
-}
 
 let node0 = RootNode([1,2,3]).rootNode
 let node1 = RootNode([4,2,9,3,5,nil,7]).rootNode
 let node2 = RootNode([21,7,14,1,1,2,2,3,3]).rootNode
 
-findTilt(node0)
-findTilt(node1)
+//findTilt(node0)
+//findTilt(node1)
 findTilt(node2)
