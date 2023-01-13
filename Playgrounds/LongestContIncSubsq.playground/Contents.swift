@@ -6,31 +6,28 @@ func findLengthOfLCIS(_ nums: [Int]) -> Int {
         return 1
     }
 
-    var counter: Int = 0
+    var startIndex = 0
     var currIndex: Int = 0
+    var subArray = [Int: Int]()
     var endIndex: Int = 1
-    var tempArray = [Int]()
 
     while endIndex < nums.count {
 
-        tempArray.append(nums[currIndex])
-
         if nums[currIndex] < nums[endIndex] {
-            tempArray.append(nums[endIndex])
             currIndex += 1
             endIndex += 1
         } else {
-            tempArray = Array(Set(tempArray))
-            counter = max(counter, tempArray.count)
-            tempArray = []
+            startIndex = endIndex
             currIndex = endIndex
             endIndex = currIndex + 1
         }
-        tempArray = Array(Set(tempArray))
-        counter = max(counter, tempArray.count)
+
+        subArray[startIndex, default: 1] = currIndex + 1
     }
 
-    return counter
+    return subArray.map {
+        return $0.value - $0.key
+    }.max()!
 }
 
 findLengthOfLCIS([1,3,5,4,7])
