@@ -6,11 +6,10 @@ func numJewelsInStones(_ jewels: String, _ stones: String) -> Int {
     let stones = Array(stones)
     var result = 0
 
-    for jewel in jewels {
-        for stone in stones {
-            if stone == jewel {
-                result += 1
-            }
+    for jewelIndex in 0..<jewels.count {
+        for stoneIndex in 0..<stones.count {
+
+            result += jewels[jewelIndex] == stones[stoneIndex] ? 1 : 0
         }
     }
 
