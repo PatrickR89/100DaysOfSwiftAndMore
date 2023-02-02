@@ -11,6 +11,7 @@
 		CDC92B59298A9DDE00F7E93A /* SongResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = CDC92B58298A9DDE00F7E93A /* SongResponse.json */; };
 		CDC92B5B298A9EA600F7E93A /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC92B5A298A9EA600F7E93A /* Mockable.swift */; };
 		CDC92B5D298BB39500F7E93A /* SongListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC92B5C298BB39500F7E93A /* SongListViewModelTest.swift */; };
+		CDC92B5F298BBA4500F7E93A /* AddUpdateSongViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC92B5E298BBA4500F7E93A /* AddUpdateSongViewModelTest.swift */; };
 		FF4CAAA5271F5BE00056F3BA /* YT_Vapor_iOS_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4CAAA4271F5BE00056F3BA /* YT_Vapor_iOS_AppApp.swift */; };
 		FF4CAAA7271F5BE00056F3BA /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4CAAA6271F5BE00056F3BA /* SongList.swift */; };
 		FF4CAAA9271F5BE90056F3BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4CAAA8271F5BE90056F3BA /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		CDC92B58298A9DDE00F7E93A /* SongResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SongResponse.json; sourceTree = "<group>"; };
 		CDC92B5A298A9EA600F7E93A /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		CDC92B5C298BB39500F7E93A /* SongListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewModelTest.swift; sourceTree = "<group>"; };
+		CDC92B5E298BBA4500F7E93A /* AddUpdateSongViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUpdateSongViewModelTest.swift; sourceTree = "<group>"; };
 		FF4CAAA1271F5BE00056F3BA /* YT-Vapor-iOS-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YT-Vapor-iOS-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4CAAA4271F5BE00056F3BA /* YT_Vapor_iOS_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YT_Vapor_iOS_AppApp.swift; sourceTree = "<group>"; };
 		FF4CAAA6271F5BE00056F3BA /* SongList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				CDC92B5A298A9EA600F7E93A /* Mockable.swift */,
 				CDC92B58298A9DDE00F7E93A /* SongResponse.json */,
 				CDC92B5C298BB39500F7E93A /* SongListViewModelTest.swift */,
+				CDC92B5E298BBA4500F7E93A /* AddUpdateSongViewModelTest.swift */,
 			);
 			path = "YT-Vapor-iOS-AppTests";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDC92B57298A9C8800F7E93A /* MockHTTPClient.swift in Sources */,
+				CDC92B5F298BBA4500F7E93A /* AddUpdateSongViewModelTest.swift in Sources */,
 				CDC92B5D298BB39500F7E93A /* SongListViewModelTest.swift in Sources */,
 				CDC92B5B298A9EA600F7E93A /* Mockable.swift in Sources */,
 			);

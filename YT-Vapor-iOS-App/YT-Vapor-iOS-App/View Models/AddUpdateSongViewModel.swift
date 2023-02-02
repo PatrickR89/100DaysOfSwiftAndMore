@@ -70,4 +70,15 @@ final class AddUpdateSongViewModel: ObservableObject {
         let songToUpdate = Song(id: songID, title: songTitle)
         try await httpClient.sendData(to: url, object: songToUpdate, httpMethod: HttpMethods.PUT.rawValue)
     }
+
+    func isValidSong() -> Bool {
+
+        return songTitle.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? false : true
+
+//        if songTitle == "" {
+//            return false
+//        } else {
+//            return true
+//        }
+    }
 }
