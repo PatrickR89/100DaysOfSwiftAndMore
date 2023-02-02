@@ -28,5 +28,7 @@ extension Mockable {
         } catch {
             print("❌ \(error)")
         }
+
+        return []
     }
 }

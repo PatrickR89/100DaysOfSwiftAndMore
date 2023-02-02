@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CDC92B50298A970F00F7E93A /* YT_Vapor_iOS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC92B4F298A970F00F7E93A /* YT_Vapor_iOS_AppTests.swift */; };
 		CDC92B57298A9C8800F7E93A /* MockHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC92B56298A9C8800F7E93A /* MockHTTPClient.swift */; };
 		CDC92B59298A9DDE00F7E93A /* SongResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = CDC92B58298A9DDE00F7E93A /* SongResponse.json */; };
 		CDC92B5B298A9EA600F7E93A /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC92B5A298A9EA600F7E93A /* Mockable.swift */; };
+		CDC92B5D298BB39500F7E93A /* SongListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC92B5C298BB39500F7E93A /* SongListViewModelTest.swift */; };
 		FF4CAAA5271F5BE00056F3BA /* YT_Vapor_iOS_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4CAAA4271F5BE00056F3BA /* YT_Vapor_iOS_AppApp.swift */; };
 		FF4CAAA7271F5BE00056F3BA /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4CAAA6271F5BE00056F3BA /* SongList.swift */; };
 		FF4CAAA9271F5BE90056F3BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4CAAA8271F5BE90056F3BA /* Assets.xcassets */; };
@@ -36,10 +36,10 @@
 
 /* Begin PBXFileReference section */
 		CDC92B4D298A970F00F7E93A /* YT-Vapor-iOS-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "YT-Vapor-iOS-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDC92B4F298A970F00F7E93A /* YT_Vapor_iOS_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YT_Vapor_iOS_AppTests.swift; sourceTree = "<group>"; };
 		CDC92B56298A9C8800F7E93A /* MockHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHTTPClient.swift; sourceTree = "<group>"; };
 		CDC92B58298A9DDE00F7E93A /* SongResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SongResponse.json; sourceTree = "<group>"; };
 		CDC92B5A298A9EA600F7E93A /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
+		CDC92B5C298BB39500F7E93A /* SongListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewModelTest.swift; sourceTree = "<group>"; };
 		FF4CAAA1271F5BE00056F3BA /* YT-Vapor-iOS-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YT-Vapor-iOS-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4CAAA4271F5BE00056F3BA /* YT_Vapor_iOS_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YT_Vapor_iOS_AppApp.swift; sourceTree = "<group>"; };
 		FF4CAAA6271F5BE00056F3BA /* SongList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
@@ -75,10 +75,10 @@
 		CDC92B4E298A970F00F7E93A /* YT-Vapor-iOS-AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				CDC92B4F298A970F00F7E93A /* YT_Vapor_iOS_AppTests.swift */,
 				CDC92B56298A9C8800F7E93A /* MockHTTPClient.swift */,
 				CDC92B5A298A9EA600F7E93A /* Mockable.swift */,
 				CDC92B58298A9DDE00F7E93A /* SongResponse.json */,
+				CDC92B5C298BB39500F7E93A /* SongListViewModelTest.swift */,
 			);
 			path = "YT-Vapor-iOS-AppTests";
 			sourceTree = "<group>";
@@ -261,8 +261,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDC92B57298A9C8800F7E93A /* MockHTTPClient.swift in Sources */,
+				CDC92B5D298BB39500F7E93A /* SongListViewModelTest.swift in Sources */,
 				CDC92B5B298A9EA600F7E93A /* Mockable.swift in Sources */,
-				CDC92B50298A970F00F7E93A /* YT_Vapor_iOS_AppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
